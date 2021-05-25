@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  rate: 1
+  bathroom: 1
+  wifi: false
+
+two:
+  description: MyString
+  rate: 1
+  bathroom: 1
+  wifi: false
