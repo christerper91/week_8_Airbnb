@@ -11,6 +11,15 @@
     </div>
   <% end %>
 
+  <% @room.photos.each do |p|%>
+   <%= image_tag p %>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :photos %>
+    <%= form.file_field :photos, multiple: true %>
+  </div>
+
   <div class="field">
     <%= form.label :description %>
     <%= form.text_field :description %>

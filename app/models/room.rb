@@ -1,3 +1,4 @@
 class Room < ApplicationRecord
-  belongs_to :user 
+  belongs_to :user
+  has_many_attached :photos, dependent: :destroy
 end

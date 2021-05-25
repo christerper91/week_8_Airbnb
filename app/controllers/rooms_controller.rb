@@ -8,6 +8,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1 or /rooms/1.json
   def show
+    @room = Room.find(params[:id])
   end
 
   # GET /rooms/new
@@ -17,6 +18,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/edit
   def edit
+    @room = Room.find(params[:id])
   end
 
   # POST /rooms or /rooms.json
@@ -64,6 +66,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:description, :rate, :bathroom, :wifi)
+      params.require(:room).permit(:description, :rate, :bathroom, :wifi, :photos)
     end
 end
