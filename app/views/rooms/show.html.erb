@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Photos:</strong>
+  <% @room.photos.each do |p| %>
+  <%=image_tag p%>
+  <% end %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @room.description %>
 </p>
