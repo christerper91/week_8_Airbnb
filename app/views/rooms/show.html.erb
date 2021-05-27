@@ -3,7 +3,7 @@
 <p>
   <strong>Photos:</strong>
   <% @room.photos.each do |p| %>
-  <%=image_tag p, width: 200%>
+  <%=image_tag p, width: 100%>
   <% end %>
 </p>
 
@@ -29,5 +29,6 @@
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
-
-<%= link_to 'Book Now', new_booking_url %>
+<br>
+<br>
+<%= link_to 'Book Now', new_booking_url(room_id: @room.id) %>
