@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Rooms</h1>
+<h1>Rooms List</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Photo</th>
       <th>Description</th>
       <th>Rate</th>
       <th>Bathroom</th>
@@ -18,13 +19,18 @@
       <% @rooms.each do |room| %>
         <tr>
           <td><% room.photos.each do |p| %>
-          <%=image_tag p%>
+          <%=image_tag p, width: 100%>
           <% end %>
           </td>
           <td><%= room.description %></td>
           <td><%= room.rate %></td>
           <td><%= room.bathroom %></td>
-          <td><%= room.wifi %></td>
+          <td><% if room.wifi %>
+              /
+              <% else%>
+              x
+              <% end %>
+          </td>
           <td><%= link_to 'Show', room %></td>
           <td><%= link_to 'Edit', edit_room_path(room) %></td>
           <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -37,3 +43,4 @@
 <br>
 
 <%= link_to 'New Room', new_room_path %>
+<%= link_to 'Back', root_path %>

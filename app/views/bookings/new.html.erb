@@ -1,1 +1,13 @@
-dfvsdvds
+<%= form_with(model: @booking) do |form| %>
+
+  <%= form.label :start_date %>
+  <%= form.datetime_local_field :start_date %>
+
+  <%= form.label :end_date %>
+  <%= form.datetime_local_field :end_date %>
+
+  <%= form.hidden_field :room_id %>
+
+  <%= form.submit %>
+
+<% end %>
