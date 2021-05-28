@@ -1,1 +1,25 @@
-dvsdvdsvdv
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @photo %>
+</p>
+
+<p>start date: <%= @booking.start_date %> </p>
+
+<p>end date: <%= @booking.end_date %> </p>
+
+<p>days: <%= @days %> </p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @room.rate %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @total %>
+</p>
+
+
+<%= link_to 'Stripe', "#" %>

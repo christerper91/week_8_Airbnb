@@ -4,6 +4,12 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @booking = Booking.find(params[:id])
+    @days = (@booking.end_date - @booking.start_date)/(60*60*24)
+    #to access data booking from room
+    @room = @booking.room
+    @total = @days*@room.rate
+    @photo = @room.photos.first
   end
 
   def new
